@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+            TASK-4 
+        </title>
+        <style>
+            body{
+                background-color: lightgoldenrodyellow;
+            }
+            p,h1{
+                color: black;
+                font-style: oblique;
+            }
+            label{
+                color: black;
+            }
+            button{
+                font-style: oblique;
+                font-size: medium;
+            }
+            input{
+                font-size: medium;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div id ='inpbo'>
+                <h1>CALCULATOR</h1><br>
+                <label for="number1">Number 1:</label>
+                <input type="number1" id="number 1">
+                <label for="number2">Number 2:</label>
+                <input type="number2" id="number 2"><br></div>
+                <br><div id="buttons">
+                    <button onclick="sum()">ADD</button>
+                    <button onclick="diff()">SUBTRACT</button>
+                    <button onclick="prod()">MULTIPLY</button>
+                    <button onclick="div()">DIVISION</button>
+                </div>
+     <br><P>ANSWER:</P>
+     <P id="result"></P>
+     <script>
+        const sum =() =>{
+            const numberInput1 = document.getElementById("number1");
+            const numberInput2 = document.getElementById("number2");
+            const res =document.getElementById("result");
+            const num1=Number(numberInput1.value);
+            const num2=Number(numberInput2.value);
+            res.innerHTML =num1 + num2
+            }
+            const diff =() =>{
+            const numberInput1 = document.getElementById("number1");
+            const numberInput2 = document.getElementById("number2");
+            const res =document.getElementById("result");
+            const num1=Number(numberInput1.value);
+            const num2=Number(numberInput2.value);
+            res.innerHTML =num1 - num2
+         }
+         const prod =() =>{
+            const numberInput1 = document.getElementById("number1");
+            const numberInput2 = document.getElementById("number2");
+            const res =document.getElementById("result");
+            const num1=Number(numberInput1.value);
+            const num2=Number(numberInput2.value);
+            res.innerHTML =num1 * num2
+         }
+         const div =() =>{
+            const numberInput1 = document.getElementById("number1");
+            const numberInput2 = document.getElementById("number2");
+            const res =document.getElementById("result");
+            const num1=Number(numberInput1.value);
+            const num2=Number(numberInput2.value);
+            res.innerHTML =num1 / num2 
+
+         }
+
+         
+     </script>
+            
+        </center>
+        </body>
+        </html>
