@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>
+TODO LIST
+        </title>
+
+        <style>
+body{
+background-color: #f5f5f5;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1
+{
+    color: #335c62;
+}
+.box{
+    background-color: rgb(205,195,195);
+    border-radius: 20px;
+    padding: 50px;
+}
+input{
+    background-color:#dde3e4 ;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+}
+.clear-button
+{display: flex;
+justify-content: center;
+}
+button{
+    color: antiquewhite;
+    background-color: #59a2ad;
+    padding:4px 10px;
+    border: 2px solid rgb(114, 113, 113);
+}
+.todo-items{
+    display: flex;
+    justify-content: space-between;
+
+}
+.todo-list{
+    height: 30vh;
+}
+.items{
+    border: 2px solid rgb(109, 140, 143);
+    display: flex;
+    justify-content: space-between;
+    background-color: #59a2ad;
+}
+.bttn{
+    color: white;
+    background-color: #59a2ad;
+}
+        </style>
+    </head>
+    <body class="container">
+        <div class="box">
+            <h1> To-Do List</h1>
+            <div id="add">
+                <input type="text" id="todo-items">
+                <button id="add-button">ADD</button>
+            </div>
+            <div id="todo-list" class="todo-list">
+
+            </div>
+            <div class="clear-button">
+                <button id="clear-all">CLEAR ALL</button>
+            </div>
+        </div>
+    <script>const addButton = document.querySelector("#add-button");
+        const todoItems = document.querySelector("#todo-items");
+        const todoList = document.querySelector("#todo-list");
+        const clearButton = document.querySelector("#clear-all");
+        let todoItem = [];
+        addButton.addEventListener("click",addTodo);
+        clearButton.addEventListener("click",clearAll)
+        function addTodo(){
+            if(todoItems.value==""){
+                alert("You cannot add a blank list!");
+            }
+            else{
+                todoItem.push(todoItems.value);
+                todoItems.value = "";
+                renderTodo();
+            }
+            
+        }
+        function removeTodo(index){
+            todoItem.splice(index,1);
+            renderTodo();
+        }
+        function clearAll(){
+            if(confirm("Are you sure  to clear ?")){
+                todoItem=[];
+                removeTodo();
+            } }
+            function renderTodo(){
+            todoList.innerHTML="";
+            for(let i=0;i<todoItem.length;i++){
+                todoList.innerHTML += `<div class="items" id="list"><span>${todoItem[i]}</span><button class="bttn" onclick="removeTodo()" id="item">x</button></div>`;
+            } 
+        }
+        </script>
+    </body>
+</html>
